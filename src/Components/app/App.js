@@ -4,46 +4,39 @@ import getLocationData from '../../apiCalls'
 import mockData from '../../MockData/mockData'
 import Results from '../Results/Results'
 import Location from '../Location/Location'
-import Input from '../input/Input'
+import Form from '../Form/Form'
 import Header from '../Header/Header'
 
 class App extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			machineLocations: [mockData],
+			machineLocations: [],
 			error: ""
 		}
 	}
 
-	componentDidMount = () => {
-		// getLocationData("bend")
-		// .then(data => {
-		// 	this.setState({ machineLocations: data.locations })
-		// })
-		// .catch(error => this.setState({ error: error.message }))
+	getLocations = (cityName) => {
+		getLocationData(cityName)
+		.then(data => {
+			this.setState({ machineLocations: data.locations })
+		})
+		.catch(error => this.setState({ error: error.message }))
 	}
 
-	searchCity = () => {
-
-	}
-
-	handleChange = (event) => {
-		event.target.name = 'city'
-	}
 
 	render() {
 		return(
-			<body>
+			<main>
 				<Header />
 				{this.state.error !== "" ? <h1>Whoops something went wrong: {`${this.state.error}`}</h1> :
 				<div>
-					<Input />
+					<Form getLocations={this.getLocations}/>
 					<Results />
 					<Location />
 				</div>
 				} 
-			</body>
+			</main>
 		)
 	}
 }
