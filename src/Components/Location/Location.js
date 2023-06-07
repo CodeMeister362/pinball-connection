@@ -1,10 +1,10 @@
 import React from 'react'
 import './Location.css'
 
-const Location = () => {
+const Location = ({ name }) => {
 	return(
-		<div>
-			
+		<div className='location'>
+			<h3>{name}</h3>
 		</div>
 	)
 }

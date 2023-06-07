@@ -1,0 +1,9 @@
+.location-container {
+	border: solid black 2px;
+	padding: 20px;
+	display:flex;
+	flex-direction:column;
+	grid-gap: 20px;
+	width: auto;
+	height: auto;
+}

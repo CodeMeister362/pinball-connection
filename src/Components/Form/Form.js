@@ -1,9 +1,9 @@
 import React from 'react'
-import './Input.css'
+import './Form.css'
 
 class Input extends React.Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			cityInput: "",
 		}
@@ -15,9 +15,8 @@ class Input extends React.Component {
 
 	searchCity = (event) => {
 		event.preventDefault()
-		const cityName = {
-			...this.state
-		}
+		const cityName = this.state.cityInput
+		this.props.getLocations(cityName)
 		this.clearInput()
 	}
 
@@ -36,7 +35,7 @@ class Input extends React.Component {
 					value={this.state.cityInput}
 					onChange={event => this.handleChange(event)}
 				/>
-				{/* <button onClick={}> Search </button> */}
+				<button onClick={event => this.searchCity(event)}> Search </button>
 			</form>
 		)
 	}
