@@ -1,5 +1,6 @@
 import React from 'react'
 import './Form.css'
+import { withRouter } from 'react-router-dom'
 
 class Form extends React.Component {
 	constructor(props) {
@@ -18,6 +19,7 @@ class Form extends React.Component {
 		const cityName = this.state.cityInput
 		this.props.getLocations(cityName)
 		this.clearInput()
+		this.props.history.push('/results')
 	}
 
 	clearInput = () => {
@@ -41,4 +43,4 @@ class Form extends React.Component {
 	}
 }
 
-export default Form
+export default withRouter(Form)

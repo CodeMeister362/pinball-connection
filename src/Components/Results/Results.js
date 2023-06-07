@@ -1,9 +1,10 @@
 import React from 'react'
 import './Results.css'
 import Machine from '../machine/Machine'
+import { Link } from 'react-router-dom'
 
 const Results = ({ list, getLocation }) => {
-	const machineList = list.location_machine_xrefs.map(place => {
+	const machineList = list.map(place => {
 		return (
 			<Machine 
 				name={place.machine.name}
