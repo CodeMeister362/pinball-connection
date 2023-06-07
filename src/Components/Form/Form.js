@@ -1,7 +1,7 @@
 import React from 'react'
 import './Form.css'
 
-class Input extends React.Component {
+class Form extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -41,4 +41,4 @@ class Input extends React.Component {
 	}
 }
 
-export default Input
+export default Form
