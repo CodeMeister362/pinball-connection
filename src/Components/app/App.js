@@ -11,31 +11,27 @@ class App extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			machineLocations: [],
-			error: ""
+			machineLocations: mockData,
+			error: "",
 		}
 	}
 
-	getLocations = (cityName) => {
-		getLocationData(cityName)
-		.then(data => {
-			this.setState({ machineLocations: data.locations })
-		})
-		.catch(error => this.setState({ error: error.message }))
-	}
+	// getLocations = (cityName) => {
+	// 	getLocationData(cityName)
+	// 	.then(data => {
+	// 		this.setState({ machineLocations: data.locations })
+	// 	})
+	// 	.catch(error => this.setState({ error: error.message }))
+	// }
 
 
 	render() {
 		return(
 			<main>
 				<Header />
-				{this.state.error !== "" ? <h1>Whoops something went wrong: {`${this.state.error}`}</h1> :
-				<div>
-					<Form getLocations={this.getLocations}/>
-					<Results />
-					<Location />
-				</div>
-				} 
+				{/* <Form getLocations={this.getLocations}/> */}
+				<Results list={this.state.machineLocations}/>
+				<Location />
 			</main>
 		)
 	}
