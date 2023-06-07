@@ -17,7 +17,7 @@ class Form extends React.Component {
 	searchCity = (event) => {
 		event.preventDefault()
 		const cityName = this.state.cityInput
-		this.props.getLocations(cityName)
+		this.props.getAllLocations(cityName)
 		this.clearInput()
 		this.props.history.push('/results')
 	}
