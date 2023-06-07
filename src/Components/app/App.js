@@ -44,7 +44,7 @@ class App extends React.Component {
 				<Switch>
 					<Route exact path='/' render={() => <Form getAllLocations={this.getAllLocations}/>} />
 					<Route exact path='/results' render={() => (this.state.empty? <Results list={this.state.machineData} getLocation={this.getLocation}/> : <Error error={this.state.error}/>) }/>
-					<Route exact path='/:id' render={({ match }) => <Location destination={this.state.location} id={match.params.id}/>}/>
+					<Route exact path='/:id' render={() => <Location destination={this.state.location} shouldGo={this.state.shouldGo}/>}/>
 					<Route exact path='*' render={() => <Error error={this.state.error}/>}/>
 				</Switch>
 			</main>
