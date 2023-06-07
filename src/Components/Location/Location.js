@@ -1,10 +1,14 @@
 import React from 'react'
 import './Location.css'
 
-const Location = ({ name }) => {
+const Location = ({ destination }) => {
+	const goHere = destination.location
 	return(
 		<div className='location'>
-			<h3>{name}</h3>
+			<h1>{goHere.name}</h1>
+			<p>{goHere.street}</p>
+			<p>{goHere.city}</p>
+			<button>Back</button>
 		</div>
 	)
 }
