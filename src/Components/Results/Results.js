@@ -1,20 +1,21 @@
 import React from 'react'
 import './Results.css'
-import Location from '../../Components/Location/Location'
+import Machine from '../machine/Machine'
 
 const Results = ({ list }) => {
-	const locationList = list.location_machine_xrefs.map(place => {
+	const machineList = list.location_machine_xrefs.map(place => {
 		return (
-			<Location 
+			<Machine 
 				name={place.machine.name}
 				key={place.id}
+				id={place.id}
 			/>
 	)
 })
-console.log('here', locationList)
+console.log('here', machineList)
 	return(
 		<div className='location-container'>
-			{locationList}
+			{machineList}
 		</div>
 	)
 }

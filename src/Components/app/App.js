@@ -11,7 +11,7 @@ class App extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			machineLocations: mockData,
+			machineData: mockData,
 			error: "",
 		}
 	}
@@ -30,8 +30,8 @@ class App extends React.Component {
 			<main>
 				<Header />
 				{/* <Form getLocations={this.getLocations}/> */}
-				<Results list={this.state.machineLocations}/>
-				<Location />
+				<Results list={this.state.machineData}/>
+				<Location list={this.state.machineData}/>
 			</main>
 		)
 	}
