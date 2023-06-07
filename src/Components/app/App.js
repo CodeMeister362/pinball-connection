@@ -6,7 +6,7 @@ import Results from '../Results/Results'
 import Location from '../Location/Location'
 import Form from '../Form/Form'
 import Header from '../Header/Header'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Error from '../error/Error'
 
 class App extends React.Component {
@@ -24,15 +24,16 @@ class App extends React.Component {
 		getLocationData(cityName)
 		.then(data => {
 			this.setState({ machineData: data.location_machine_xrefs })
-			console.log('data', data)
 		})
 		.catch(error => this.setState({ error: error.message }))
 	}
 			
 	getLocation = (ID) => {
-		const goToLocation = this.state.machineData.location_machine_xrefs.find(machine => {
+		console.log('before method', this.state.machineData)
+		const goToLocation = this.state.machineData.find(machine => {
 			return machine.id === ID
 		})
+		console.log('method', goToLocation)
 		this.setState({ location: goToLocation })
 		this.setState({ shouldGo: true })
 	}
@@ -42,13 +43,12 @@ class App extends React.Component {
 		return(
 			<main>
 				<Header />
-				<Routes>
-					{/* <Route path='/Results' element={<Results list={this.state.machineData} getLocation={this.getLocation}/> }/> */}
-					{/* <Route exact path='/:id' element={<Location list={this.state.machineData} destination={this.state.location}/>}/> */}
-					<Route exact path='/' element={<Form getLocations={this.getLocations}/>} />
-					<Route exact path='*' element={<Error />}/>
-				</Routes>
-				<Results list={this.state.machineData} getLocation={this.getLocation}/>
+				<Switch>
+					<Route exact path='/results' render={() => <Results list={this.state.machineData} getLocation={this.getLocation}/> }/>
+					<Route exact path='/:id' render={({ match }) => <Location list={this.state.machineData} destination={this.state.location} id={match.params.id}/>}/>
+					<Route exact path='/' render={() => <Form getLocations={this.getLocations}/>} />
+					<Route exact path='*' render={() => <Error />}/>
+				</Switch>
 			</main>
 		)
 	}

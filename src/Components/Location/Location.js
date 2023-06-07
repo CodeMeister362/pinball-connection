@@ -1,5 +1,6 @@
 import React from 'react'
 import './Location.css'
+import { Link } from 'react-router-dom'
 
 const Location = ({ destination }) => {
 	const goHere = destination.location
@@ -8,7 +9,7 @@ const Location = ({ destination }) => {
 			<h1>{goHere.name}</h1>
 			<p>{goHere.street}</p>
 			<p>{goHere.city}, {goHere.state}</p>
-			<button>Back</button>
+			<Link to='/results'><button>Back</button></Link>
 		</div>
 	)
 }
