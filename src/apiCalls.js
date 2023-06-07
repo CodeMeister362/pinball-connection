@@ -1,5 +1,5 @@
 const getLocationData = (location) => {
-	return fetch (`https://pinballmap.com/api/v1/region/${location}/locations.json;no_details=1`, {
+	return fetch (`https://pinballmap.com/api/v1/region/${location}/location_machine_xrefs.json;no_details=1`, {
 		method: 'GET'
 	})
 	.then(response => {

@@ -7,7 +7,7 @@ const Location = ({ destination }) => {
 		<div className='location'>
 			<h1>{goHere.name}</h1>
 			<p>{goHere.street}</p>
-			<p>{goHere.city}</p>
+			<p>{goHere.city}, {goHere.state}</p>
 			<button>Back</button>
 		</div>
 	)

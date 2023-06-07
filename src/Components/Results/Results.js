@@ -3,7 +3,9 @@ import './Results.css'
 import Machine from '../machine/Machine'
 
 const Results = ({ list, getLocation }) => {
-	const machineList = list.location_machine_xrefs.map(place => {
+	console.log('above', list)
+	const machineList = list.map(place => {
+		console.log('below', place)
 		return (
 			<Machine 
 				name={place.machine.name}
