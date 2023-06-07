@@ -17,37 +17,35 @@ class App extends React.Component {
 			error: "",
 			location: [],
 			shouldGo: false,
+			empty: true,
 		}
 	}
 	
-	getLocations = (cityName) => {
+	getAllLocations = (cityName) => {
 		getLocationData(cityName)
 		.then(data => {
 			this.setState({ machineData: data.location_machine_xrefs })
 		})
-		.catch(error => this.setState({ error: error.message }))
+		.catch(error => this.setState({ error: error.message, empty: false }))
 	}
 			
 	getLocation = (ID) => {
-		console.log('before method', this.state.machineData)
 		const goToLocation = this.state.machineData.find(machine => {
 			return machine.id === ID
 		})
-		console.log('method', goToLocation)
 		this.setState({ location: goToLocation })
 		this.setState({ shouldGo: true })
 	}
 
 	render() {
-		console.log('afterSet', this.state.machineData)
 		return(
 			<main>
 				<Header />
 				<Switch>
-					<Route exact path='/results' render={() => <Results list={this.state.machineData} getLocation={this.getLocation}/> }/>
-					<Route exact path='/:id' render={({ match }) => <Location list={this.state.machineData} destination={this.state.location} id={match.params.id}/>}/>
-					<Route exact path='/' render={() => <Form getLocations={this.getLocations}/>} />
-					<Route exact path='*' render={() => <Error />}/>
+					<Route exact path='/' render={() => <Form getAllLocations={this.getAllLocations}/>} />
+					<Route exact path='/results' render={() => (this.state.empty? <Results list={this.state.machineData} getLocation={this.getLocation}/> : <Error error={this.state.error}/>) }/>
+					<Route exact path='/:id' render={({ match }) => <Location destination={this.state.location} id={match.params.id}/>}/>
+					<Route exact path='*' render={() => <Error error={this.state.error}/>}/>
 				</Switch>
 			</main>
 		)
