@@ -14,9 +14,7 @@ const Location = ({ destination, shouldGo }) => {
 				<>
 					<h1>{goHere.name}</h1>
 					<p>{goHere.street}</p>
-					<p>
-						{goHere.city}, {goHere.state}
-					</p>
+					<p>{goHere.city}, {goHere.state}</p>
 					<Link to="/results">
 						<button>Back</button>
 					</Link>
