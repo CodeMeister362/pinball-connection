@@ -2,7 +2,7 @@ import React from 'react'
 import './Results.css'
 import Machine from '../machine/Machine'
 
-const Results = ({ list, getLocation }) => {
+const Results = ({ list, getLocation, handleClick }) => {
 	const machineList = list.map(place => {
 		return (
 			<Machine 
@@ -10,6 +10,7 @@ const Results = ({ list, getLocation }) => {
 				key={place.id}
 				id={place.id}
 				getLocation={getLocation}
+				handleClick={handleClick}
 			/>
 	)
 })

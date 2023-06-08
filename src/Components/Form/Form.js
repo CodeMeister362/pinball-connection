@@ -34,13 +34,14 @@ class Form extends React.Component {
 		const cityOptions = cities.map(city => (
 			<option key={city} value={city} />
 		));
-		
+
 		return(
-			<form>
+			<form className='cityForm'>
 				<p>Search For Pinnball Machines Below</p>
 				<input
 					type='text'
 					list='cities'
+					id='cityInput'
 					placeholder='City or State'
 					value={this.state.cityInput}
 					onChange={ event => this.handleChange(event) }

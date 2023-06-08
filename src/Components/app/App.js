@@ -36,6 +36,13 @@ class App extends React.Component {
 		this.setState({ location: goToLocation, shouldGo: true })
 	}
 	
+	handleClick = (ID) => {
+		const getMachines = this.state.machineData.filter(machine => {
+			return machine.id !== ID
+		})
+		this.setState({ machineData: getMachines })
+	}
+
 	render() {
 		const isEmpty = this.state.empty
 		const state = this.state
@@ -43,9 +50,11 @@ class App extends React.Component {
 			<main>
 				<Header />
 				<Switch>
-					<Route exact path='/' render={() => <Form getAllLocations={this.getAllLocations}/>} />
+					<Route exact path='/' render={() => 
+						<Form getAllLocations={this.getAllLocations}/>} 
+					/>
 					<Route exact path='/results' render={() => (
-						isEmpty? <Results list={state.machineData} getLocation={this.getLocation}/> 
+						isEmpty? <Results list={state.machineData} getLocation={this.getLocation} handleClick={this.handleClick}/> 
 						: <Error error={state.error}/>) }
 					/>
 					<Route exact path='/:id' render={() => 
