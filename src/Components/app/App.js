@@ -33,19 +33,25 @@ class App extends React.Component {
 		const goToLocation = this.state.machineData.find(machine => {
 			return machine.id === ID
 		})
-		this.setState({ location: goToLocation })
-		this.setState({ shouldGo: true })
+		this.setState({ location: goToLocation, shouldGo: true })
 	}
-
+	
 	render() {
+		const isEmpty = this.state.empty
+		const state = this.state
 		return(
 			<main>
 				<Header />
 				<Switch>
 					<Route exact path='/' render={() => <Form getAllLocations={this.getAllLocations}/>} />
-					<Route exact path='/results' render={() => (this.state.empty? <Results list={this.state.machineData} getLocation={this.getLocation}/> : <Error error={this.state.error}/>) }/>
-					<Route exact path='/:id' render={() => <Location destination={this.state.location} shouldGo={this.state.shouldGo}/>}/>
-					<Route exact path='*' render={() => <Error error={this.state.error}/>}/>
+					<Route exact path='/results' render={() => (
+						isEmpty? <Results list={state.machineData} getLocation={this.getLocation}/> 
+						: <Error error={state.error}/>) }
+					/>
+					<Route exact path='/:id' render={() => 
+						<Location destination={state.location} shouldGo={state.shouldGo}/> } 
+					/>
+					<Route exact path='*' render={() => <Error error={state.error}/> }/>
 				</Switch>
 			</main>
 		)
