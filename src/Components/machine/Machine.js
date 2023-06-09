@@ -2,12 +2,19 @@ import React from 'react'
 import './Machine.css'
 import { Link } from 'react-router-dom'
 
-const Machine = ({ name, getLocation, id, handleClick }) => {
+const Machine = ({ name, getLocation, id, handleClick, getRandomNumber, getQuestion, getDare }) => {
 	return(
 		<div className='machine'>
 			<div className=''>
 				<Link to={`/${id}`}>
-					<h3 onClick={() => getLocation(id)}>{name}</h3>
+					<h3 onClick={() => {
+						getLocation(id)
+						const randomNumber = getRandomNumber()
+						getQuestion(randomNumber)
+						getDare(randomNumber)
+					}}>
+						{name}
+					</h3>
 				</Link>
 			</div>
 			<div>

@@ -8,6 +8,8 @@ import Form from '../Form/Form'
 import Header from '../Header/Header'
 import { Route, Switch } from 'react-router-dom'
 import Error from '../error/Error'
+import questionData from '../../MockData/questions'
+import dareData from '../../MockData/dares'
 
 class App extends React.Component {
 	constructor() {
@@ -18,7 +20,28 @@ class App extends React.Component {
 			location: [],
 			shouldGo: false,
 			empty: true,
+			randomQuestion: "",
+			randomDare: "",
 		}
+	}
+
+	getRandomNumber = () => {
+		return Math.floor(Math.random() * 26)
+	}
+
+	getQuestion = (num) => {
+		const question = questionData.find(question => {
+			return question.id === num
+		})
+		console.log(question)
+		this.setState({ randomQuestion: question })
+	}
+
+	getDare = (num) => {
+		const dare = dareData.find(dare => {
+			return dare.id === num
+		})
+		this.setState({ randomDare: dare })
 	}
 	
 	getAllLocations = (cityName) => {
@@ -50,17 +73,31 @@ class App extends React.Component {
 			<main>
 				<Header />
 				<Switch>
-					<Route exact path='/' render={() => 
-						<Form getAllLocations={this.getAllLocations}/>} 
+					<Route exact path='/' render={ () => 
+						<Form getAllLocations={this.getAllLocations}/> } 
 					/>
-					<Route exact path='/results' render={() => (
-						isEmpty? <Results list={state.machineData} getLocation={this.getLocation} handleClick={this.handleClick}/> 
+					<Route exact path='/results' render={ () => (isEmpty? 
+						<Results 
+							list={state.machineData} 
+							getLocation={this.getLocation} 
+							handleClick={this.handleClick} 
+							getRandomNumber={this.getRandomNumber}
+							getQuestion={this.getQuestion}
+							getDare={this.getDare}
+						/> 
 						: <Error error={state.error}/>) }
 					/>
-					<Route exact path='/:id' render={() => 
-						<Location destination={state.location} shouldGo={state.shouldGo}/> } 
+					<Route exact path='/:id' render={ () => 
+						<Location 
+							destination={state.location} 
+							shouldGo={state.shouldGo} 
+							randomQuestion={state.randomQuestion} 
+							randomDare={state.randomDare}
+						/> } 
 					/>
-					<Route exact path='*' render={() => <Error error={state.error}/> }/>
+					<Route exact path='*' render={ () => 
+						<Error error={state.error}/> }
+					/>
 				</Switch>
 			</main>
 		)
