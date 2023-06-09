@@ -32,7 +32,6 @@ class App extends React.Component {
 		const question = questionData.find(question => {
 			return question.id === num
 		})
-		console.log(question)
 		this.setState({ randomQuestion: question })
 	}
 
@@ -48,14 +47,20 @@ class App extends React.Component {
 		.then(data => {
 			this.setState({ machineData: data.location_machine_xrefs })
 		})
-		.catch(error => this.setState({ error: error.message, empty: false }))
+		.catch(error => this.setState({ 
+			error: error.message, 
+			empty: false 
+		}))
 	}
 			
 	getLocation = (ID) => {
 		const goToLocation = this.state.machineData.find(machine => {
 			return machine.id === ID
 		})
-		this.setState({ location: goToLocation, shouldGo: true })
+		this.setState({ 
+			location: goToLocation, 
+			shouldGo: true 
+		})
 	}
 	
 	handleClick = (ID) => {
@@ -75,7 +80,8 @@ class App extends React.Component {
 					<Route exact path='/' render={ () => 
 						<Form getAllLocations={this.getAllLocations}/> } 
 					/>
-					<Route exact path='/results' render={ () => (isEmpty? 
+					<Route exact path='/results' render={ () => (
+						isEmpty? 
 						<Results 
 							list={state.machineData} 
 							getLocation={this.getLocation} 
