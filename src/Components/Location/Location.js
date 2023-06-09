@@ -20,18 +20,16 @@ const Location = ({
 				<div>
 				<>
 					<h1>{goHere.name}</h1>
-					<p>{goHere.street}</p>
-					<p>{goHere.city}, {goHere.state}</p>
-					<Link to="/results">
-						<button>Back</button>
-					</Link>
+					<p> {goHere.street}, {goHere.city}, {goHere.state}</p>
 				</>
 				<div>
-					<h2>Pinnball loser picks a truth or dare!</h2>
-					<p>Truth: {randomQuestion.content}</p>
-					<p>Or</p>
-					<p>Dare: {randomDare.content}</p> 
+					<h2>Pick a truth or dare!</h2>
+					<p>TRUTH: {randomQuestion.content}</p>
+					<p>DARE: {randomDare.content}</p> 
 				</div>
+				<Link to="/results">
+						<button>Back</button>
+					</Link>
 				</div>
 			)}
 		</div>

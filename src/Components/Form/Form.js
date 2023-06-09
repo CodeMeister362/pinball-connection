@@ -9,7 +9,6 @@ class Form extends React.Component {
 		this.state = {
 			cityInput: "",
 		}
-		console.log('test', props)
 	}
 	
 	handleChange = (event) => {
@@ -39,7 +38,7 @@ class Form extends React.Component {
 					type='text'
 					list='cities'
 					id='cityInput'
-					placeholder='Select City or State'
+					placeholder='Select From Dropdown'
 					value={this.state.cityInput}
 					onChange={ event => this.handleChange(event) }
 				/>

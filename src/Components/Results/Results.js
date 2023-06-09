@@ -26,6 +26,7 @@ const Results = ({
 })
 	return(
 		<div className='machine-container'>
+			<h2>Select a pinball machine below to find the address and a truth or dare challenge for the loser.</h2>
 			{machineList}
 		</div>
 	)
