@@ -1,8 +1,16 @@
 import React from 'react'
 import './Results.css'
 import Machine from '../machine/Machine'
+import PropTypes from 'prop-types'
 
-const Results = ({ list, getLocation, handleClick, getRandomNumber, getQuestion, getDare }) => {
+const Results = ({ 
+	list, 
+	getLocation, 
+	handleClick, 
+	getRandomNumber, 
+	getQuestion, 
+	getDare,
+}) => {
 	const machineList = list.map(place => {
 		return (
 			<Machine 
@@ -19,9 +27,30 @@ const Results = ({ list, getLocation, handleClick, getRandomNumber, getQuestion,
 })
 	return(
 		<div className='machine-container'>
+			<h2>Select a pinball machine below to find the address and a truth or dare challenge for the loser.</h2>
 			{machineList}
 		</div>
 	)
 }
 
 export default Results
+
+
+Results.propTypes = {
+	list: PropTypes.arrayOf(PropTypes.objectOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			location: PropTypes.objectOf(PropTypes.shape({
+				id: PropTypes.number.isRequired,
+				name: PropTypes.string.isRequired,
+				street: PropTypes.string.isRequired,
+				city: PropTypes.string.isRequired,
+				state: PropTypes.string.isRequired
+			})),
+			machine: PropTypes.objectOf(PropTypes.shape({
+				id: PropTypes.number.isRequired,
+				name: PropTypes.string.isRequired,
+			}))
+		})
+	))
+}

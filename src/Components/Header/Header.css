@@ -1,0 +1,25 @@
+.logo {
+  font-family: 'Neonderthaw', cursive;
+  font-size: 60px;
+  color: #39FF14;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+	position: relative;
+	margin-bottom: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-link {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    margin: 0;
+  }
+}

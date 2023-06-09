@@ -1,9 +1,18 @@
 .machine-container {
-	border: solid black 2px;
-	padding: 20px;
-	display:flex;
-	flex-direction:column;
-	grid-gap: 20px;
-	width: auto;
-	height: auto;
+  border: solid black 2px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  width: auto;
+  max-width: 100%;
+  margin-top: 1%; 
+  overflow-y: auto;
+	position:relative;
+}
+
+div h2 {
+	max-width: 350px;
+	text-align: center;
+	margin: 0 auto
 }

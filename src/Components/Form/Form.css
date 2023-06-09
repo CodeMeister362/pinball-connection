@@ -1,0 +1,42 @@
+.cityForm {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	max-width: 400px;
+}
+
+form button {
+	padding: 2%;
+	margin: 2%;
+	background-color: #39FF14; 
+  color: #000; 
+  border: none; 
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+  font-weight: bold; 
+  font-size: 16px;
+  cursor: pointer; 
+	text-transform: uppercase; 
+  font-family: 'Press Start 2P', cursive; 
+}
+
+form button:hover {
+  background-color: 00B300; 
+  color: #FFF; 
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); 
+}
+
+form input {
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+form input:focus {
+  outline: none;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
