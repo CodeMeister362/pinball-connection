@@ -7,7 +7,7 @@ const Location = ({ destination, shouldGo, randomQuestion, randomDare }) => {
 	if (!shouldGo) {
 		return <Redirect to="/" />;
 	}
-	console.log(randomQuestion, randomDare, destination)
+	console.log(randomQuestion.content, randomDare.content)
 	
 	return (
 		<div className="location">
@@ -22,7 +22,10 @@ const Location = ({ destination, shouldGo, randomQuestion, randomDare }) => {
 					</Link>
 				</>
 				<div>
-					<h2>Truth or Dare?</h2>
+					<h2>Pinnball loser picks a truth or dare!</h2>
+					<p>Truth: {randomQuestion.content}</p>
+					<p>Or</p>
+					<p>Dare: {randomDare.content}</p> 
 				</div>
 				</div>
 			)}
