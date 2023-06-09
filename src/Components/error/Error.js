@@ -13,5 +13,5 @@ export default Error
 
 
 Error.propTypes = {
-	error: PropTypes.string
+	error: PropTypes.string.isRequired
 }

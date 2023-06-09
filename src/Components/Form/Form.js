@@ -1,7 +1,8 @@
 import React from 'react'
 import './Form.css'
 import { withRouter } from 'react-router-dom'
-import cities from '../../LocalData/cities'
+import cityData from '../../LocalData/cities'
+import PropTypes from 'prop-types'
 
 class Form extends React.Component {
 	constructor(props) {
@@ -29,7 +30,7 @@ class Form extends React.Component {
 	}
 	
 	render() {
-		const cityOptions = cities.map(city => (
+		const cityOptions = cityData.map(city => (
 			<option key={city} value={city} />
 		));
 		return(
@@ -50,3 +51,8 @@ class Form extends React.Component {
 }
 
 export default withRouter(Form)
+
+
+Form.propTypes = {
+	props: PropTypes.func.isRequired
+}

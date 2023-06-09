@@ -1,6 +1,7 @@
 import React from 'react'
 import './Results.css'
 import Machine from '../machine/Machine'
+import PropTypes from 'prop-types'
 
 const Results = ({ 
 	list, 
@@ -33,3 +34,23 @@ const Results = ({
 }
 
 export default Results
+
+
+Results.propTypes = {
+	list: PropTypes.arrayOf(PropTypes.objectOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			location: PropTypes.objectOf(PropTypes.shape({
+				id: PropTypes.number.isRequired,
+				name: PropTypes.string.isRequired,
+				street: PropTypes.string.isRequired,
+				city: PropTypes.string.isRequired,
+				state: PropTypes.string.isRequired
+			})),
+			machine: PropTypes.objectOf(PropTypes.shape({
+				id: PropTypes.number.isRequired,
+				name: PropTypes.string.isRequired,
+			}))
+		})
+	))
+}
