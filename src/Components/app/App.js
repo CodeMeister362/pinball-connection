@@ -1,15 +1,15 @@
 import React from 'react'
 import './App.css'
 import getLocationData from '../../apiCalls'
-import mockData from '../../MockData/mockData'
+import mockData from '../../LocalData/mockData'
 import Results from '../Results/Results'
 import Location from '../Location/Location'
 import Form from '../Form/Form'
 import Header from '../Header/Header'
 import { Route, Switch } from 'react-router-dom'
 import Error from '../error/Error'
-import questionData from '../../MockData/questions'
-import dareData from '../../MockData/dares'
+import questionData from '../../LocalData/questions'
+import dareData from '../../LocalData/dares'
 
 class App extends React.Component {
 	constructor() {

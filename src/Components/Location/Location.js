@@ -2,13 +2,18 @@ import React from 'react'
 import './Location.css'
 import { Link, Redirect } from 'react-router-dom'
 
-const Location = ({ destination, shouldGo, randomQuestion, randomDare }) => {
+const Location = ({ 
+	destination, 
+	shouldGo, 
+	randomQuestion, 
+	randomDare 
+}) => {
 	const goHere = destination ? destination.location : null
+	
 	if (!shouldGo) {
 		return <Redirect to="/" />;
 	}
-	console.log(randomQuestion.content, randomDare.content)
-	
+
 	return (
 		<div className="location">
 			{goHere && (
