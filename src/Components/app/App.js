@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 import getLocationData from '../../apiCalls'
-import mockData from '../../LocalData/mockData'
 import Results from '../Results/Results'
 import Location from '../Location/Location'
 import Form from '../Form/Form'
@@ -70,7 +69,7 @@ class App extends React.Component {
 		const isEmpty = this.state.empty
 		const state = this.state
 		return(
-			<main>
+			<main className='main'>
 				<Header />
 				<Switch>
 					<Route exact path='/' render={ () => 

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Results.css'
 import Machine from '../machine/Machine'
-import { Redirect } from 'react-router-dom'
 
 const Results = ({ 
 	list, 

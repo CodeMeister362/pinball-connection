@@ -9,6 +9,7 @@ class Form extends React.Component {
 		this.state = {
 			cityInput: "",
 		}
+		console.log('test', props)
 	}
 	
 	handleChange = (event) => {
@@ -32,20 +33,18 @@ class Form extends React.Component {
 		const cityOptions = cities.map(city => (
 			<option key={city} value={city} />
 		));
-
 		return(
 			<form className='cityForm'>
-				<p>Search For Pinnball Machines Below</p>
 				<input
 					type='text'
 					list='cities'
 					id='cityInput'
-					placeholder='City or State'
+					placeholder='Select City or State'
 					value={this.state.cityInput}
 					onChange={ event => this.handleChange(event) }
 				/>
 				<datalist id='cities'>{cityOptions}</datalist>
-				<button onClick={ event => this.searchCity(event) }> Search </button>
+				<button onClick={ event => this.searchCity(event) }> Find Pinball Machines </button>
 			</form>
 		)
 	}
