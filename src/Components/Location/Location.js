@@ -9,7 +9,6 @@ const Location = ({
 	randomQuestion, 
 	randomDare 
 }) => {
-	console.log('this one', destination)
 	const goHere = destination ? destination.location : null
 	
 	if (!shouldGo) {
@@ -25,13 +24,13 @@ const Location = ({
 					<p> {goHere.street}, {goHere.city}, {goHere.state}</p>
 				</>
 				<div>
-					<h2>Pick a truth or dare!</h2>
+					<h2>Loser picks truth or dare.</h2>
 					<p>TRUTH: {randomQuestion.content}</p>
 					<p>DARE: {randomDare.content}</p> 
 				</div>
 				<Link to="/results">
-						<button>Back</button>
-					</Link>
+					<button>Back</button>
+				</Link>
 				</div>
 			)}
 		</div>

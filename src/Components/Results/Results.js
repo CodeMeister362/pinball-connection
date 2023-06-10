@@ -2,6 +2,7 @@ import React from 'react'
 import './Results.css'
 import Machine from '../machine/Machine'
 import PropTypes from 'prop-types'
+import Error from '../error/Error'
 
 const Results = ({ 
 	list, 
@@ -27,7 +28,7 @@ const Results = ({
 })
 	return(
 		<div className='machine-container'>
-			<h2>Select a pinball machine below to find the address and a truth or dare challenge for the loser.</h2>
+			<h2>Select a pinball machine below to find the address and a truth or dare challenge.</h2>
 			{machineList}
 		</div>
 	)
