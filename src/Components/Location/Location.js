@@ -9,6 +9,7 @@ const Location = ({
 	randomQuestion, 
 	randomDare 
 }) => {
+	console.log('this one', destination)
 	const goHere = destination ? destination.location : null
 	
 	if (!shouldGo) {
@@ -41,29 +42,37 @@ export default Location
 
 
 Location.propTypes = {
-	destination: PropTypes.objectOf(PropTypes.shape({
-		id: PropTypes.number.isRequired,
-		location: PropTypes.objectOf(PropTypes.shape({
-			id: PropTypes.number.isRequired,
-			name: PropTypes.string.isRequired,
-			street: PropTypes.string.isRequired,
-			city: PropTypes.string.isRequired,
-			state: PropTypes.string.isRequired
-		})),
-		machine: PropTypes.objectOf(PropTypes.shape({
-			id: PropTypes.number.isRequired,
-			name: PropTypes.string.isRequired,
-		}))
-	})),
+	destination: PropTypes.objectOf(
+		PropTypes.shape({
+			location: PropTypes.objectOf(
+				PropTypes.shape({
+					id: PropTypes.number.isRequired,
+					name: PropTypes.string.isRequired,
+					street: PropTypes.string.isRequired,
+					state: PropTypes.string.isRequired
+				})
+			)
+		})
+	),
 	shouldGo: PropTypes.bool,
 	randomQuestion: PropTypes.objectOf(PropTypes.shape({
-		id: PropTypes.number.isRequired,
-		type: PropTypes.string.isRequired,
-		content: PropTypes.string.isRequired
+		id: PropTypes.number,
+		type: PropTypes.string,
+		content: PropTypes.string
 	})),
 	randomDare: PropTypes.objectOf(PropTypes.shape({
-		id: PropTypes.number.isRequired,
-		type: PropTypes.string.isRequired,
-		content: PropTypes.string.isRequired
-	}))
+		id: PropTypes.number,
+		type: PropTypes.string,
+		content: PropTypes.string
+	})),
+	destination: PropTypes.objectOf(
+		PropTypes.shape({
+			machine: PropTypes.objectOf(
+				PropTypes.shape({
+					id: PropTypes.number.isRequired,
+					name: PropTypes.string.isRequired,
+				})
+			)
+		})
+	)
 }

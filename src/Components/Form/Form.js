@@ -54,5 +54,5 @@ export default withRouter(Form)
 
 
 Form.propTypes = {
-	props: PropTypes.func.isRequired
+	props: PropTypes.func
 }

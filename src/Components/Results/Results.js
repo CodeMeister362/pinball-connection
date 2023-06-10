@@ -37,20 +37,36 @@ export default Results
 
 
 Results.propTypes = {
-	list: PropTypes.arrayOf(PropTypes.objectOf(
-		PropTypes.shape({
-			id: PropTypes.number.isRequired,
-			location: PropTypes.objectOf(PropTypes.shape({
+	list: PropTypes.arrayOf(
+		PropTypes.objectOf(
+			PropTypes.shape({
 				id: PropTypes.number.isRequired,
-				name: PropTypes.string.isRequired,
-				street: PropTypes.string.isRequired,
-				city: PropTypes.string.isRequired,
-				state: PropTypes.string.isRequired
-			})),
-			machine: PropTypes.objectOf(PropTypes.shape({
-				id: PropTypes.number.isRequired,
-				name: PropTypes.string.isRequired,
-			}))
-		})
-	))
+				location: PropTypes.objectOf(
+					PropTypes.shape({
+						id: PropTypes.number.isRequired,
+						name: PropTypes.string.isRequired,
+						street: PropTypes.string.isRequired,
+						state: PropTypes.string.isRequired
+					})
+				)
+			})
+		)
+	),
+	list: PropTypes.arrayOf(
+		PropTypes.objectOf(
+			PropTypes.shape({
+				machine: PropTypes.objectOf(
+					PropTypes.shape({
+						id: PropTypes.number.isRequired,
+						name: PropTypes.string.isRequired
+					})
+				)
+			})
+		)
+	),
+	getLocation: PropTypes.func.isRequired,
+	handleClick: PropTypes.func.isRequired,
+	getRandomNumber: PropTypes.func.isRequired,
+	getQuestion: PropTypes.func.isRequired,
+	getDare: PropTypes.func.isRequired
 }
