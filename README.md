@@ -6,22 +6,18 @@ First off this project wouldn't be possible without Scott and Ryan at Pinball Ma
 
 ## Set Up 🎬
 
-If you want to expand on this application first clone this repository then copy the SSH code and in your terminal type `git clone (copy paste the SSH code here)` and hit enter. Run `npm install` and then `cd` into the repository and run `npm start` to open it in your browser and edit it with your favorite code editor. 
+If you want to expand on this website first clone this repository then copy the SSH code and in your terminal type `git clone (copy paste the SSH code here)` and hit enter. `cd` into the repository and run `npm install`, and `npm start` to open the application in your browser. 
 
 
-> ### Opening the application 🎬
+### Opening the application 🎬
 
-You can also visit the deployed website at this link. 
+You can also visit the deployed website at this [link](https://pinball-connection.vercel.app/).
 
 ---
 
 ## Preview 🎬
 
-![landing page]()
-
-![pinball machines]()
-
-![location information]()
+![short video of Pinball Connection website](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2FjMTM2N2E5Y2UwNWE1NmIxMzQ3MzZjMmM3MzkxZDE0NGQwNDliYSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/0bAsHoaLzeJR4hoAmo/giphy.gif)
 
 ---
 
@@ -45,8 +41,14 @@ Git workflow
 
 ## Goals and Challenges 🎬
 
+The goals of this project were to utilize the following technologies:
+React
+Router
+Asynchronous JavaScript
+End to end testing with Cypress
+Create personas and user stories to describe your target audience.
 
 ## Future Development Opportunities 🎬
 
-Future developments would include a map so users can see what machines are closest to them and it would also be great to make POST requests to add new machine locations. 
+Future development would include a map so users can see what machines are closest to them and it would also be great to make POST requests to add new machine locations. 
 
