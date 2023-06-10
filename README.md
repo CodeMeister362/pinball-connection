@@ -6,7 +6,7 @@ First off this project wouldn't be possible without Scott and Ryan at pinballmac
 
 ## Set Up 🎬
 
-If you want to expand on this website first clone this repository then copy the SSH code and in your terminal type `git clone (copy paste the SSH code here)` and hit enter. `cd` into the repository and run `npm install`, and `npm start` to open the application in your browser. 
+If you want to expand on this website first fork this repository, copy the SSH code and in your terminal type `git clone (copy paste the SSH code here)` and hit enter. `cd` into the repository and run `npm install`, and `npm start` to open the application in your browser. 
 
 
 ### Opening the application 🎬
