@@ -29,7 +29,7 @@ Nathan Chamberlain [GitHub](https://github.com/CodeMeister362) | [LinkedIn](http
 
 ## Context 🎬
 
-Pinball Connection was a solo project build during my third semester enrolled in Turing School of Software & Design's Front End Development program, a four- module, seven-month course focused on preparing students for a career as web developers working with Javascript, HTML, CSS, and the React framework. The project was built to match the specifications of our project [rubric](https://frontend.turing.edu/projects/module-3/showcase.html), and represents my last project for this third semester. In addition to challenging us to utilize an API tackle React syntax, conventions, and architecture, Pinball Connection also required the following languages, technologies, and competencies:
+Pinball Connection was a solo project build during my third semester enrolled in Turing School of Software & Design's Front End Development program, a four- module, seven-month course focused on preparing students for a career as web developers working with Javascript, HTML, CSS, and the React framework. The project was built to match the specifications of our project [rubric](https://frontend.turing.edu/projects/module-3/showcase.html), and represents my last project for this third semester. In addition to challenging us to utilize an API, tackle React syntax conventions, and architecture, Pinball Connection also required the following languages, technologies, and competencies:
 
 Test-Driven Development utilizing the Cypress framework
 URL customization and browser compatibility via Router
